@@ -21,11 +21,11 @@
 	<key>createdby</key>
 	<string>Attila Györffy</string>
 	<key>description</key>
-	<string>Quickly find gems on Rubygems.org</string>
+	<string>Quickly find gems on RubyGems.org</string>
 	<key>disabled</key>
 	<false/>
 	<key>name</key>
-	<string>Search for Gems on Rubygems.org</string>
+	<string>Search for Gems on RubyGems.org</string>
 	<key>objects</key>
 	<array>
 		<dict>
