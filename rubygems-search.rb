@@ -1,6 +1,6 @@
-require 'bundler/setup'
-require 'gems'
+$: << File.expand_path('./vendor/gems/gems-0.8.1/lib')
 
+require 'gems'
 require 'rexml/document'
 
 query = ARGV[0]
