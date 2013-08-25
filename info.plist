@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>com.alfredapp.attilagyorffy.rubygems</string>
+	<key>connections</key>
+	<dict>
+		<key>6C68D0BB-A89A-4FDD-BB99-B5A5B460646E</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>A0765B30-2863-417C-8132-E4E486A5E253</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>Attila Györffy</string>
+	<key>description</key>
+	<string>Quickly find gems on Rubygems.org</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>Search for Gems on Rubygems.org</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>127</integer>
+				<key>keyword</key>
+				<string>gem</string>
+				<key>runningsubtext</key>
+				<string>Searching rubygems.org...</string>
+				<key>script</key>
+				<string>/usr/bin/ruby ./rubygems-search.rb {query} 2&gt;&gt; ~/Library/Logs/com.alfredapp.attilagyorffy.rubygems.log</string>
+				<key>subtext</key>
+				<string>Enter the name of the gem you are looking for</string>
+				<key>title</key>
+				<string>Search for a gem on RubyGems.org...</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>6C68D0BB-A89A-4FDD-BB99-B5A5B460646E</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>plusspaces</key>
+				<false/>
+				<key>url</key>
+				<string>http://rubygems.org/gems/{query}</string>
+				<key>utf8</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.openurl</string>
+			<key>uid</key>
+			<string>A0765B30-2863-417C-8132-E4E486A5E253</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string>This Alfred workflow helps you quickly find ruby gems without having to open the terminal.
+
+Search results are fed back to Alfred's main window for convenience.</string>
+	<key>uidata</key>
+	<dict>
+		<key>6C68D0BB-A89A-4FDD-BB99-B5A5B460646E</key>
+		<dict>
+			<key>ypos</key>
+			<real>60</real>
+		</dict>
+		<key>A0765B30-2863-417C-8132-E4E486A5E253</key>
+		<dict>
+			<key>ypos</key>
+			<real>170</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string>github.com/liquid/alfred-workflow-rubygems</string>
+</dict>
+</plist>
