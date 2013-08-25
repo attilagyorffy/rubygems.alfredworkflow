@@ -3,32 +3,26 @@ require 'gems'
 
 require 'rexml/document'
 
-gems = []
-
 query = ARGV[0]
 
-  Gems.search(query)[0..4].each_with_index do |gem, index|
-    gems << {
-      name: gem['name'],
-      info: gem['info']
-    }
-  end
+xml_items = REXML::Element.new('items')
+
+Gems.search(query)[0..4].each do |gem_data|
   
-document = REXML::Element.new("items")
-gems.each_with_index do |gem, index|
+  gem_name = gem_data['name']
+  gem_info = gem_data['info']
   
-  item = REXML::Element.new('item')
-  item.add_attributes({
-    'uid'          => gem[:name],
-    'arg'          => gem[:name],
+  xml_item = REXML::Element.new('item')
+  xml_item.add_attributes({
+    'uid' => gem_name,
+    'arg' => gem_name,
   })
-  REXML::Element.new("title", item).text    = gem[:name]
-  REXML::Element.new("subtitle", item).text = gem[:info]
 
-  icon = REXML::Element.new("icon", item)
-  icon.text = 'icon.png'
+  REXML::Element.new('title',     xml_item).text = gem_name
+  REXML::Element.new('subtitle',  xml_item).text = gem_info
+  REXML::Element.new('icon',      xml_item).text = 'icon.png'
 
-  document << item
+  xml_items << xml_item
 end
-
-puts document.to_s
+  
+puts xml_items.to_s
