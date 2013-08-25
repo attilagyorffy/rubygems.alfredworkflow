@@ -7,7 +7,7 @@ query = ARGV[0]
 
 xml_items = REXML::Element.new('items')
 
-Gems.search(query)[0..4].each do |gem_data|
+Gems.search(query)[0..8].each do |gem_data|
   
   gem_name = gem_data['name']
   gem_info = gem_data['info']
