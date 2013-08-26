@@ -9,8 +9,9 @@ xml_items = REXML::Element.new('items')
 
 Gems.search(query)[0..8].each do |gem_data|
   
-  gem_name = gem_data['name']
-  gem_info = gem_data['info']
+  gem_name    = gem_data['name']
+  gem_info    = gem_data['info']
+  gem_version = gem_data['version']
   
   xml_item = REXML::Element.new('item')
   xml_item.add_attributes({
@@ -19,7 +20,7 @@ Gems.search(query)[0..8].each do |gem_data|
   })
 
   REXML::Element.new('title',     xml_item).text = gem_name
-  REXML::Element.new('subtitle',  xml_item).text = gem_info
+  REXML::Element.new('subtitle',  xml_item).text = "#{gem_version} - #{gem_info}"
   REXML::Element.new('icon',      xml_item).text = 'icon.png'
 
   xml_items << xml_item
