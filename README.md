@@ -7,6 +7,6 @@ Search the RubyGems API from within Alfred! Use the `gem` command within Alfred 
 # Typical workflow
 
 * Make sure you have the [Alfred Powerpack](http://www.alfredapp.com/powerpack/)
-* Download the latest [release](http://github.com/liquid/alfred-workflow-rubygems/releases/download/0.0.1/alfred-rubygems-workflow.alfredworkflow) of this workflow
+* Download the latest [release](https://github.com/liquid/alfred-workflow-rubygems/releases) of this workflow
 * Double click it to add to Alfred
 * Profit
