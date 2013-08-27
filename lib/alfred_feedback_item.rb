@@ -7,6 +7,7 @@ class AlfredFeedBackItem
     @title = title
     @subtitle = options[:subtitle]
     @valid = options[:valid].nil? ? true : !!options[:valid]
+    @arg = options[:arg] || @title
   end
   
   def valid?
@@ -17,7 +18,7 @@ class AlfredFeedBackItem
     REXML::Element.new('item').tap do |xml_item|
       xml_item.add_attributes({
         'uid' => @title,
-        'arg' => @title,
+        'arg' => @arg,
         'valid' => valid? ? 'yes' : 'no'
       })
 

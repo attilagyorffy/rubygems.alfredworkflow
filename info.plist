@@ -63,7 +63,7 @@
 				<key>plusspaces</key>
 				<false/>
 				<key>url</key>
-				<string>http://rubygems.org/gems/{query}</string>
+				<string>{query}</string>
 				<key>utf8</key>
 				<true/>
 			</dict>
