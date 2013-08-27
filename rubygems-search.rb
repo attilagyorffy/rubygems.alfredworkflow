@@ -1,29 +1,27 @@
 $: << File.expand_path('./vendor/gems/gems-0.8.1/lib')
+$: << File.expand_path('./lib')
 
 require 'gems'
-require 'rexml/document'
+require 'alfred_feedback'
+require 'alfred_feedback_item'
 
 query = ARGV[0]
 
-xml_items = REXML::Element.new('items')
+feedback = AlfredFeedback.new
+gem_results = Gems.search(query)
 
-Gems.search(query)[0..8].each do |gem_data|
-  
-  gem_name    = gem_data['name']
-  gem_info    = gem_data['info']
-  gem_version = gem_data['version']
-  
-  xml_item = REXML::Element.new('item')
-  xml_item.add_attributes({
-    'uid' => gem_name,
-    'arg' => gem_name,
-  })
+if gem_results.any?
 
-  REXML::Element.new('title',     xml_item).text = gem_name
-  REXML::Element.new('subtitle',  xml_item).text = "#{gem_version} - #{gem_info}"
-  REXML::Element.new('icon',      xml_item).text = 'icon.png'
+  gem_results.each do |gem_data|
+    name    = gem_data['name']
+    info    = gem_data['info']
+    version = gem_data['version']
+    subtitle = "#{version} - #{info}"
 
-  xml_items << xml_item
+    feedback << AlfredFeedBackItem.new(name, :subtitle => subtitle)
+  end
+else
+  feedback << AlfredFeedBackItem.new("No gems found for '#{query}'.", :subtitle => "Are you sure you're looking for the right thing?", :valid => false)
 end
-  
-puts xml_items.to_s
+
+puts feedback
