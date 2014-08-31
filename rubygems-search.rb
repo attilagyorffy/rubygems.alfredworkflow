@@ -21,7 +21,7 @@ begin
       arg     = ""
       subtitle = "#{version} - #{info}"
 
-      feedback << AlfredFeedBackItem.new(name, :subtitle => subtitle, :arg => "http://rubygems.org/gems/#{name}")
+      feedback << AlfredFeedBackItem.new(name, :subtitle => subtitle, :arg => "https://rubygems.org/gems/#{name}")
     end
   else
     feedback << AlfredFeedBackItem.new("No gems found for '#{query}'.", :subtitle => "Are you sure you're looking for the right thing?", :valid => false)
