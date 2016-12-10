@@ -12,5 +12,5 @@ Search the RubyGems API from within Alfred! Use the `gem` command within Alfred 
 * Profit
 
 
-[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/liquid/alfred-workflow-rubygems/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/attilagyorffy/alfred-workflow-rubygems/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
 
